@@ -6,7 +6,7 @@ from urllib.parse import parse_qs
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         # Load marks data
-        with open("marks.json", "r") as file:
+        with open("q-vercel-python.json", "r") as file:
             marks_data = json.load(file)
         
         # Parse query parameters
