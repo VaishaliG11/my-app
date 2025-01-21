@@ -6,7 +6,7 @@ from urllib.parse import parse_qs
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         # Load marks data using an absolute path
-        file_path = os.path.join(os.path.dirname(__file__), "q-vercel-python.json")
+        file_path = os.path.join(os.path.dirname(__file__), "marks.json")
         try:
             with open(file_path, "r") as file:
                 marks_data = json.load(file)
