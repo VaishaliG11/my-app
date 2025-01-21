@@ -1,12 +1,14 @@
 # api/index.py
 import json
+import os
 from http.server import BaseHTTPRequestHandler
 from urllib.parse import parse_qs
 
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         # Load marks data
-        with open("q-vercel-python.json", "r") as file:
+        file_path = os.path.join(os.path.dirname(__file__), "q-vercel-python.json")
+        with open(file_path, "r") as file:
             marks_data = json.load(file)
         
         # Parse query parameters
